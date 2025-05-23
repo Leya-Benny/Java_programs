@@ -3,7 +3,8 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter password to check: ");
+        
+        System.out.print("Enter a password to check: ");
         String password = reader.readLine();
 
         int score = 0;
@@ -13,11 +14,14 @@ public class Main {
         if (password.matches(".*\\d.*")) score++;
         if (password.matches(".*[!@#$%^&*()].*")) score++;
 
-        System.out.println("Password Strength: " + score + "/5");
+        System.out.println("Password Strength Score: " + score + "/5");
+
         if (score < 3) {
-            System.out.println("Suggestions: Use uppercase, lowercase, digits, special characters, and make it longer.");
+            System.out.println("Try adding uppercase, lowercase, numbers, and special characters.");
+            System.out.println("Also make your password at least 8 characters long.");
         } else {
-            System.out.println("Your password is fairly strong.");
+            System.out.println("Nice! Your password is strong enough.");
         }
     }
 }
+
